@@ -10,7 +10,7 @@
 	$bot->getNotificationListener()->setMessageHandler(function($payload) {
 	        file_put_contents(
 	            sys_get_temp_dir() . '/conversation_id.txt',
-	            $payload->getConversation()->getId();
+	            $payload->getConversation()->getId()
 	        );
 	    }
 	);
