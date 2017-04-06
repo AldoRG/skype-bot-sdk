@@ -245,10 +245,10 @@ class SkypeBot
      */
     protected function fetch($key)
     {
-        if (!isset($this->resolvedObj[$key])) {
-            $this->resolvedObj[$key] = $this->resolve($key);
+        if (!isset($this->resolvedObjs[$key])) {
+            $this->resolvedObjs[$key] = $this->resolve($key);
         }
-        return $this->resolvedObj[$key];
+        return $this->resolvedObjs[$key];
     }
 
 
