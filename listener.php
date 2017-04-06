@@ -17,7 +17,7 @@
 			var_dump("\n");
 			var_dump($payload->getConversation()->getId());
 			file_put_contents(
-				'/folder/conversation_id.txt',
+				'folder/conversation_id.txt',
 				$payload->getConversation()->getId()
 			);
 		}
