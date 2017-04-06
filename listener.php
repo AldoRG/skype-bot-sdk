@@ -7,7 +7,7 @@
 	);
 	$conversation_id = null;
 	$bot = \SkypeBot\SkypeBot::init($config, $dataStorate);
-	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
+	$bot->getNotificationListener()->setMessageHandler(function($payload){
 			$conversation_id = $payload->getConversation()->getId();
 			/*var_dump($conversation_id);
 			var_dump("\n");
