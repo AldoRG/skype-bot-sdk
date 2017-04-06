@@ -27,7 +27,7 @@
 			$bot->getApiClient()->call(
 				new \SkypeBot\Command\SendMessage(
 					'Hello World.',
-		        	$payload->getConversation()->getId()
+		        	$conversation_id
 				);
 			);
 		}
