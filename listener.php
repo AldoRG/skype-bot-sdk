@@ -14,7 +14,6 @@
 	});
 	die;
 	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
-		echo "Hola";
 			$conversation_id = $payload->getConversation()->getId();
 			/*var_dump($conversation_id);
 			var_dump("\n");
@@ -27,8 +26,8 @@
 			$bot->getApiClient()->call(
 				new \SkypeBot\Command\SendMessage(
 					'Hello World.',
-		        	$conversation_id
-				);
+					$conversation_id
+				)
 			);
 		}
 	);
