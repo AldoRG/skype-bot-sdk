@@ -3,7 +3,8 @@
     "description": "PHP SDK for Microsoft skype bot framework",
     "require": {
         "php": ">=5.5",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "penicylline/skype-bot-sdk": "dev-master"
     },
     "minimum-stability": "dev",
     "authors": [

@@ -6,8 +6,7 @@ class Config
 {
     private $appId;
     private $appSecret;
-    //private $authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
-    private $authEndpoint = 'https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token';
+    private $authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
     private $apiEndpoint = 'https://apis.skype.com';
     private $openIdEndpoint = 'https://api.aps.skype.com';
 
