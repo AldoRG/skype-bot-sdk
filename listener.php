@@ -1,6 +1,6 @@
 <?php
 	require 'vendor/autoload.php';
-	$dataStorate = new \SkypeBot\Storage\FileStorage();
+	$dataStorate = "/";
 	$config = new \SkypeBot\Config(
 		'd60336c4-982e-4a11-94ec-b14eed0c9059',
 		'BLreEhKHGhQNbva5ZHhOS1D'
@@ -11,6 +11,12 @@
 	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
 			$conversation_id = $payload->getConversation()->getId();
 			var_dump($conversation_id);
+			var_dump("\n");
+			var_dump($payload);
+			var_dump("\n");
+			var_dump($payload->getConversation());
+			var_dump("\n");
+			var_dump($payload->getConversation()->getId());
 			file_put_contents(
 				'conversation_id.txt',
 				$payload->getConversation()->getId()
