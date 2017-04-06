@@ -12,7 +12,7 @@
 	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
 			$conversation_id = $payload->getConversation()->getId();
 			file_put_contents(
-				'conversation_id.txt',
+				'/conversation_id.txt',
 				$payload->getConversation()->getId()
 			);
 		}
