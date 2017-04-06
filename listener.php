@@ -9,13 +9,6 @@
 	$bot = \SkypeBot\SkypeBot::init($config, $dataStorate);
 	$bot->getNotificationListener()->setMessageHandler(function($payload){
 			$conversation_id = $payload->getConversation()->getId();
-			/*var_dump($conversation_id);
-			var_dump("\n");
-			var_dump($payload);
-			var_dump("\n");
-			var_dump($payload->getConversation());
-			var_dump("\n");
-			var_dump($payload->getConversation()->getId());*/
 			file_put_contents('folder/conversation_id.txt',$payload->getConversation()->getId());
 			$bot->getApiClient()->call(
 				new \SkypeBot\Command\SendMessage(
