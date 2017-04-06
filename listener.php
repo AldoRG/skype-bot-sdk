@@ -12,7 +12,6 @@
 		var_dump("\n");
 		var_dump($data->getConversation());
 	});
-	die;
 	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
 			$conversation_id = $payload->getConversation()->getId();
 			/*var_dump($conversation_id);
