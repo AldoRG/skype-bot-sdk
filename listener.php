@@ -7,7 +7,14 @@
 	);
 	$conversation_id = null;
 	$bot = \SkypeBot\SkypeBot::init($config, $dataStorate);
+	$bot->getNotificationListener()->setMessageHandler(function ($data){
+		var_dump($data);
+		var_dump("\n");
+		var_dump($data->getConversation());
+	});
+	die;
 	$bot->getNotificationListener()->setMessageHandler(function($payload) use (&$conversation_id) {
+		echo "Hola";
 			$conversation_id = $payload->getConversation()->getId();
 			/*var_dump($conversation_id);
 			var_dump("\n");
@@ -17,6 +24,12 @@
 			var_dump("\n");
 			var_dump($payload->getConversation()->getId());*/
 			file_put_contents('folder/conversation_id.txt',$payload->getConversation()->getId());
+			$bot->getApiClient()->call(
+				new \SkypeBot\Command\SendMessage(
+					'Hello World.',
+		        	$payload->getConversation()->getId()
+				);
+			);
 		}
 	);
 	$bot->getApiClient()->call(
